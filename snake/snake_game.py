@@ -39,6 +39,8 @@ class SnakeGame():
             if self.self_collision():
                 break
 
+        self.scoreboard.game_over()
+
 
     def food_collision(self):
         """
