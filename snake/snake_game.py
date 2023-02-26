@@ -7,6 +7,7 @@ class SnakeGame():
 
     def __init__(self):
         self.snake = Snake()
+        self.food = Food()
         self.screen = Screen()
         self.screen.title("Snake Game")
 
@@ -18,22 +19,32 @@ class SnakeGame():
         self.screen.onkey(self.snake.move_right, "d")
 
 
-        food = Food()
-
-        game_on = True
-
-        while game_on:
+        while True:
             self.screen.update()
             # Slow down the update speed
             sleep(0.1)
             self.snake.move()
 
+            # Detech collision with food
+            self.food_collision()
+
             # Detect collisions with the wall/boarder
-            game_on = not self.wall_collision()
+            if not self.wall_collision():
+                break
 
             # Detect collisions with self
-            game_on = not self.self_collision()
+            if not self.self_collision():
+                break
 
+
+    def food_collision(self):
+        """
+        If the distance between the snake's head and the food is less than 15, refresh the food and
+        extend the snake
+        """
+        if self.snake.head.distance(self.food) < 15:
+            self.food.refresh()
+            self.snake.extend_snake()
 
 
     def wall_collision(self):
