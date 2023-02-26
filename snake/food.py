@@ -16,4 +16,4 @@ class Food(Turtle):
         """
         It refreshes the food's position to a random location on the screen.
         """
-        self.goto(x=randint(-580, 580), y=randint(-580, 580))
+        self.goto(x=randint(-280, 280), y=randint(-280, 280))

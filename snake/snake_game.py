@@ -29,11 +29,11 @@ class SnakeGame():
             self.food_collision()
 
             # Detect collisions with the wall/boarder
-            if not self.wall_collision():
+            if self.wall_collision():
                 break
 
             # Detect collisions with self
-            if not self.self_collision():
+            if self.self_collision():
                 break
 
 
@@ -52,7 +52,7 @@ class SnakeGame():
         If the snake's head is outside of the screen, return True
         :return: The x and y coordinates of the snake's head.
         """
-        return self.snake.head.xcor() > 580 or self.snake.head.xcor() < -580 or self.snake.head.ycor() > 580 or self.snake.head.ycor() < -580
+        return self.snake.head.xcor() > 280 or self.snake.head.xcor() < -280 or self.snake.head.ycor() > 280 or self.snake.head.ycor() < -280
     
 
     def self_collision(self):
