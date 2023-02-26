@@ -1,5 +1,6 @@
 from turtle import Screen
 from snake.snake import Snake
+from snake.food import Food
 from time import sleep
 
 class SnakeGame():
@@ -16,6 +17,8 @@ class SnakeGame():
         self.screen.onkey(self.snake.move_left, "a")
         self.screen.onkey(self.snake.move_right, "d")
 
+
+        food = Food()
 
         game_on = True
 
