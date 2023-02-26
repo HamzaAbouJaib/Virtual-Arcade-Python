@@ -1,5 +1,6 @@
 from turtle import Screen
 from snake.snake import Snake
+from time import sleep
 
 class SnakeGame():
 
@@ -14,3 +15,12 @@ class SnakeGame():
         self.screen.onkey(self.snake.move_down, "s")
         self.screen.onkey(self.snake.move_left, "a")
         self.screen.onkey(self.snake.move_right, "d")
+
+
+        game_on = True
+
+        while game_on:
+            self.screen.update()
+            # Slow down the update speed
+            sleep(0.1)
+            self.snake.move()

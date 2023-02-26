@@ -10,6 +10,7 @@ game_choice = screen.textinput(title="Select a game", prompt="Which game would y
 
 if game_choice.lower() == "snake":
     snake_game = SnakeGame()
+    snake_game.run_game()
 
 elif game_choice.lower() == "pong":
     screen.title("Pong Game")
