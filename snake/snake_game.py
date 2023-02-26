@@ -9,4 +9,8 @@ class SnakeGame():
         self.screen.title("Snake Game")
 
     def run_game(self):
-        pass
+        self.screen.listen()
+        self.screen.onkey(self.snake.move_up, "w")
+        self.screen.onkey(self.snake.move_down, "s")
+        self.screen.onkey(self.snake.move_left, "a")
+        self.screen.onkey(self.snake.move_right, "d")
