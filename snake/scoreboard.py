@@ -18,7 +18,7 @@ class Scoreboard(Turtle):
 
     def display(self):
         """
-        It displays the score on the screen
+        Displays the score on the screen
         """
         self.write(f"Score: {self.score}", align=self.ALIGNMENT, font=self.FONT)
 
@@ -34,6 +34,9 @@ class Scoreboard(Turtle):
 
 
     def game_over(self):
+        """
+        Writes "Game Over!" and "Click Anywhere to Exit" on the screen
+        """
         self.home()
         self.write(f"Game Over!", align=self.ALIGNMENT, font=self.FONT)
         self.goto(0, -30)

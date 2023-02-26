@@ -14,6 +14,6 @@ class Food(Turtle):
 
     def refresh(self):
         """
-        It refreshes the food's position to a random location on the screen.
+        Refreshes the food's position to a random location on the screen.
         """
         self.goto(x=randint(-280, 280), y=randint(-280, 280))

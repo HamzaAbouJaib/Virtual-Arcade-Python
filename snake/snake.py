@@ -36,7 +36,7 @@ class Snake():
     
     def extend_snake(self):
         """
-        It adds a new segment to the snake's body, positioned at the end of the snake's body
+        Adds a new segment to the snake's body, positioned at the end of the snake's body
         """
         self.add_segment(self.segments[-1].position())
 
