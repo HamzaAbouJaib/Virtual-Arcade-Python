@@ -34,6 +34,15 @@ class Snake():
         """
         self.add_segment(self.segments[-1].position())
 
-        
+
+    def move(self):
+        """
+        The function moves the snake by moving each segment to the position of the segment in front of
+        it, and then moves the head in the direction of the snake
+        """
+        for i in range(len(self.segments)-1, 0, -1):
+            front_segment = self.segments[i-1]
+            self.segments[i].goto(front_segment.xcor(), front_segment.ycor()) 
+        self.head.forward(20)   
 
     
