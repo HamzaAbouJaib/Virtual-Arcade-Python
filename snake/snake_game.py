@@ -20,14 +20,13 @@ class SnakeGame():
         self.screen.onkey(self.snake.move_left, "a")
         self.screen.onkey(self.snake.move_right, "d")
 
-
+        self.scoreboard.display()
+        
         while True:
             self.screen.update()
             # Slow down the update speed
             sleep(0.1)
             self.snake.move()
-
-            self.scoreboard.display_score()
 
             # Detech collision with food
             self.food_collision()
@@ -49,6 +48,7 @@ class SnakeGame():
         if self.snake.head.distance(self.food) < 15:
             self.food.refresh()
             self.snake.extend_snake()
+            self.scoreboard.update()
 
 
     def wall_collision(self):

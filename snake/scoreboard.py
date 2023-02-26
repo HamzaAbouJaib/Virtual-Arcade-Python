@@ -16,8 +16,14 @@ class Scoreboard(Turtle):
         self.score = 0
 
 
-    def display_score(self):
+    def display(self):
         """
         It displays the score on the screen
         """
         self.write(f"Score: {self.score}", align=self.ALLIGNMENT, font=self.FONT)
+
+    
+    def update(self):
+        self.score += 1
+        self.clear()
+        self.display()
