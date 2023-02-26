@@ -3,7 +3,7 @@ from turtle import Turtle
 class Scoreboard(Turtle):
 
     # Constant properties
-    ALLIGNMENT = "center"
+    ALIGNMENT = "center"
     FONT = ("Arial", 20, "normal")
 
     def __init__(self):
@@ -20,7 +20,7 @@ class Scoreboard(Turtle):
         """
         It displays the score on the screen
         """
-        self.write(f"Score: {self.score}", align=self.ALLIGNMENT, font=self.FONT)
+        self.write(f"Score: {self.score}", align=self.ALIGNMENT, font=self.FONT)
 
     
     def update(self):
