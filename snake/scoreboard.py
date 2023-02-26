@@ -31,3 +31,10 @@ class Scoreboard(Turtle):
         self.score += 1
         self.clear()
         self.display()
+
+
+    def game_over(self):
+        self.home()
+        self.write(f"Game Over!", align=self.ALIGNMENT, font=self.FONT)
+        self.goto(0, -30)
+        self.write(f"Click Anywhere to Exit", align=self.ALIGNMENT, font=self.FONT)
