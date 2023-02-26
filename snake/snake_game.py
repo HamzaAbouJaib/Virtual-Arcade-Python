@@ -1,6 +1,7 @@
 from turtle import Screen
 from snake.snake import Snake
 from snake.food import Food
+from snake.scoreboard import Scoreboard
 from time import sleep
 
 class SnakeGame():
@@ -8,6 +9,7 @@ class SnakeGame():
     def __init__(self):
         self.snake = Snake()
         self.food = Food()
+        self.scoreboard = Scoreboard()
         self.screen = Screen()
         self.screen.title("Snake Game")
 
@@ -24,6 +26,8 @@ class SnakeGame():
             # Slow down the update speed
             sleep(0.1)
             self.snake.move()
+
+            self.scoreboard.display_score()
 
             # Detech collision with food
             self.food_collision()
