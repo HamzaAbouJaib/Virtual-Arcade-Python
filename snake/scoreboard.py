@@ -24,6 +24,10 @@ class Scoreboard(Turtle):
 
     
     def update(self):
+        """
+        The function update() is called every time the game loop runs. It clears the screen, updates the
+        score, and displays the score
+        """
         self.score += 1
         self.clear()
         self.display()

@@ -2,6 +2,12 @@ from turtle import Turtle
 
 class Snake():
 
+
+    RIGHT = 0
+    LEFT = 180
+    UP = 90
+    DOWN = 270
+
     def __init__(self):
         self.segments = []
         # The postitions of the initial three segments of a snake
@@ -47,19 +53,31 @@ class Snake():
 
 
     def move_up(self):
-        if (self.head.heading() != 270):
-            self.head.setheading(90)
+        """
+        If the snake's head is not facing down, then set the snake's head to face up
+        """
+        if (self.head.heading() != self.DOWN):
+            self.head.setheading(self.UP)
 
     def move_down(self):
-        if (self.head.heading() != 90):
-            self.head.setheading(270)
+        """
+        If the snake's head is not facing up, then set the snake's head to face down
+        """
+        if (self.head.heading() != self.UP):
+            self.head.setheading(self.DOWN)
 
     def move_left(self):
-        if (self.head.heading() != 0):
-            self.head.setheading(180)
+        """
+        If the snake is not moving right, then it will move left
+        """
+        if (self.head.heading() != self.RIGHT):
+            self.head.setheading(self.LEFT)
 
     def move_right(self):
-        if (self.head.heading() != 180):
-            self.head.setheading(0)
+        """
+        If the snake is not moving left, then set the snake's heading to right
+        """
+        if (self.head.heading() != self.LEFT):
+            self.head.setheading(self.RIGHT)
 
     
