@@ -32,4 +32,13 @@ class PongGame():
 
             self.ball.move()
 
+            if self.ball.xcor() < 390 and self.ball.xcor() > -390:
+                if self.ball.xcor() < 360 and self.ball.xcor() > -360:
+                    # If the ball touches the upper or lower side of the screen, then bounce the ball
+                    if self.ball.ycor() > 280 or self.ball.ycor() < -280:
+                        self.ball.bounce_y()
+                    # If the ball touches the left or right paddle, then bounce the ball
+                    if self.ball.distance(self.right_paddle) < 50 and self.ball.xcor() > 330 or self.ball.distance(self.left_paddle) < 50 and self.ball.xcor() < -330:
+                        self.ball.bounce_x()
+
 
