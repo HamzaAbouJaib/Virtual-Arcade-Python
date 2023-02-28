@@ -7,11 +7,15 @@ from time import sleep
 class SnakeGame():
 
     def __init__(self):
-        self.snake = Snake()
-        self.food = Food()
-        self.scoreboard = Scoreboard()
         self.screen = Screen()
         self.screen.title("Snake Game")
+
+        image = ("./snake/apple.gif")
+        self.screen.addshape(image)
+
+        self.snake = Snake()
+        self.food = Food(image)
+        self.scoreboard = Scoreboard()
 
     def run_game(self):
         self.screen.listen()
