@@ -1,6 +1,7 @@
 from turtle import Screen
 from pong.paddle import Paddle
 from pong.ball import Ball
+from pong.scoreboard import Scoreboard
 from time import sleep
 
 
@@ -14,6 +15,7 @@ class PongGame():
         self.right_paddle = Paddle(350, 0)
         self.left_paddle = Paddle(-350, 0)
         self.ball = Ball()
+        self.scoreboard = Scoreboard()
 
 
     def run_game(self):
@@ -43,6 +45,10 @@ class PongGame():
 
 
             else:
+                if self.ball.xcor() > 360:
+                    self.scoreboard.left_point()
+                elif self.ball.xcor() < -360:
+                    self.scoreboard.right_point()
                 self.ball.reset()
 
 
