@@ -18,7 +18,7 @@ class Paddle(Turtle):
         If the turtle's y coordinate is less than the canvas width minus 50, then move the turtle
         up the screen by the MOVE_DISTANCE
         """
-        if self.ycor() < self.screen.canvwidth - 50:
+        if self.ycor() < 250:
             self.forward(self.MOVE_DISTANCE)
 
 
@@ -27,5 +27,5 @@ class Paddle(Turtle):
         If the turtle's y coordinate is greater than the negative width of the screen plus 50, then move
         the turtle down the screen by the MOVE_DISTANCE
         """
-        if self.ycor() > (self.screen.canvwidth * -1) + 50:
+        if self.ycor() > -250:
             self.backward(self.MOVE_DISTANCE)
