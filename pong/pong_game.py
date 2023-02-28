@@ -1,5 +1,6 @@
 from turtle import Screen
 from pong.paddle import Paddle
+from pong.ball import Ball
 from time import sleep
 
 
@@ -12,6 +13,7 @@ class PongGame():
 
         self.right_paddle = Paddle(350, 0)
         self.left_paddle = Paddle(-350, 0)
+        self.ball = Ball()
 
 
     def run_game(self):
