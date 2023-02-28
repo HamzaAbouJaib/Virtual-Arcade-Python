@@ -1,5 +1,6 @@
 from turtle import Screen
 from snake.snake_game import SnakeGame
+from pong.pong_game import PongGame
 
 screen = Screen()
 screen.setup(width=600, height=600)
@@ -13,7 +14,7 @@ if game_choice.lower() == "snake":
     snake_game.run_game()
 
 elif game_choice.lower() == "pong":
-    screen.title("Pong Game")
-    screen.setup(width=800, height=600)
+    pong_game = PongGame()
+    pong_game.run_game()
 
 screen.exitonclick()
