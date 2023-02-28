@@ -42,3 +42,7 @@ class PongGame():
                         self.ball.bounce_x()
 
 
+            else:
+                self.ball.reset()
+
+

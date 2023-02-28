@@ -38,3 +38,11 @@ class Ball(Turtle):
         opposite direction
         """
         self.x_move *= -1
+
+
+    def reset(self):
+        """
+        The function resets the position of the ball to the center of the screen
+        """
+        self.home()
+        self.bounce_x()
