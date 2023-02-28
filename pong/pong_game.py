@@ -1,4 +1,4 @@
-from turtle import Screen
+from turtle import Screen, Turtle
 from pong.paddle import Paddle
 from pong.ball import Ball
 from pong.scoreboard import Scoreboard
@@ -18,6 +18,25 @@ class PongGame():
         self.scoreboard = Scoreboard()
 
 
+    def instructions(self):
+        instruction_writer = Turtle()
+        instruction_writer.penup()
+        instruction_writer.hideturtle()
+        instruction_writer.color("white")
+        instruction_writer.goto(0, 30)
+        instruction_writer.write("Player1: Use Up and Down arrows to move the paddle", align="center", font=("Arial", 20, "normal"))
+        instruction_writer.goto(0, 0)
+        instruction_writer.write("Player2: Use W and S keys to move the paddle", align="center", font=("Arial", 20, "normal"))
+        instruction_writer.goto(0, -30)
+        instruction_writer.write("Game will start in 5 seconds", align="center", font=("Arial", 20, "normal"))
+
+        sleep(5)
+
+        instruction_writer.clear()
+        instruction_writer.reset()
+
+
+
     def run_game(self):
         self.screen.listen()
         self.screen.onkeypress(self.right_paddle.move_up, "Up")
@@ -25,8 +44,7 @@ class PongGame():
         self.screen.onkeypress(self.left_paddle.move_up, "w")
         self.screen.onkeypress(self.left_paddle.move_down, "s")
 
-
-        sleep(0.4)
+        self.instructions()
 
         while True:
             self.screen.update()
