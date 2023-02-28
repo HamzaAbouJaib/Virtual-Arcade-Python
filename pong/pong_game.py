@@ -24,8 +24,12 @@ class PongGame():
         self.screen.onkeypress(self.left_paddle.move_down, "s")
 
 
+        sleep(0.4)
+
         while True:
             self.screen.update()
             sleep(0.1)
+
+            self.ball.move()
 
 
