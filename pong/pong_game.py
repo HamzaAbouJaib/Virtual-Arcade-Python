@@ -48,7 +48,7 @@ class PongGame():
 
         while True:
             self.screen.update()
-            sleep(0.1)
+            sleep(self.ball.move_speed)
 
             self.ball.move()
 

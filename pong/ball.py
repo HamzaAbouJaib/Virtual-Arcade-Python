@@ -11,6 +11,8 @@ class Ball(Turtle):
 
         self.x_move = 10
         self.y_move = 10
+        self.move_speed = 0.1
+
 
 
     def move(self):
@@ -38,6 +40,8 @@ class Ball(Turtle):
         opposite direction
         """
         self.x_move *= -1
+        self.move_speed *= 0.9
+
 
 
     def reset(self):
@@ -46,3 +50,4 @@ class Ball(Turtle):
         """
         self.home()
         self.bounce_x()
+        self.move_speed = 0.1
