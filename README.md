@@ -1,10 +1,10 @@
-# Mini-Arcade-Python
+# Virtual Arcade
 The Arcade Game Simulator is a Python-based application that allows users to play classic arcade games such as Snake and Pong in a modern, interactive environment. This simulator utilizes the Turtle module to create visually appealing graphics and animations while implementing object-oriented programming concepts for efficient and maintainable code. Currently the only games available are Snake and Pong but more games will be added in the future.
 
 ## Getting Started
 To get started with the Arcade Game Simulator, you'll need to clone the repository to your local machine:
 ```
-git clone https://github.com/HamzaAbouJaib/mini-arcade-python.git
+git clone https://github.com/HamzaAbouJaib/virtual-arcade-python.git
 ```
 Once you have cloned the repository, navigate to the project directory and run the following command to launch the simulator:
 ```
