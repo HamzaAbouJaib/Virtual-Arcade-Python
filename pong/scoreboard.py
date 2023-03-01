@@ -5,6 +5,7 @@ class Scoreboard(Turtle):
     # Constant properties
     ALIGNMENT = "center"
     FONT = ("Courier", 80, "normal")
+    GAME_OVER_FONT = ("Courier", 20, "normal")
 
     def __init__(self):
         super().__init__()
@@ -43,3 +44,23 @@ class Scoreboard(Turtle):
         """
         self.right_score += 1
         self.update()
+
+    
+    def get_winner(self):
+
+        if self.right_score > self.left_score:
+            return "Player 1"
+        else: 
+            return "Player 2"
+
+
+    def game_over(self):
+        """
+        Prints out the winner of the game, and then prints out "Click Anywhere to Exit"
+        """
+        self.goto(0, 30)
+        self.write(f"Game Over!", align=self.ALIGNMENT, font=self.GAME_OVER_FONT)
+        self.goto(0, 0)
+        self.write(f"{self.get_winner()} Won!", align=self.ALIGNMENT, font=self.GAME_OVER_FONT)
+        self.goto(0, -30)
+        self.write(f"Click Anywhere to Exit", align=self.ALIGNMENT, font=self.GAME_OVER_FONT)

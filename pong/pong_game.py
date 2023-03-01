@@ -7,6 +7,9 @@ from time import sleep
 
 class PongGame():
 
+    INSTRUCTION_FONT = ("Arial", 16, "normal")
+    INSTRUCTION_ALIGNMENT = "center"
+
     def __init__(self):
         self.screen = Screen()
         self.screen.title("Pong Game")
@@ -23,15 +26,19 @@ class PongGame():
         instruction_writer.penup()
         instruction_writer.hideturtle()
         instruction_writer.color("white")
-        instruction_writer.goto(0, 30)
-        instruction_writer.write("Player1: Use Up and Down arrows to move the paddle", align="center", font=("Arial", 20, "normal"))
-        instruction_writer.goto(0, 0)
-        instruction_writer.write("Player2: Use W and S keys to move the paddle", align="center", font=("Arial", 20, "normal"))
-        instruction_writer.goto(0, -30)
-        instruction_writer.write("Game will start in 5 seconds", align="center", font=("Arial", 20, "normal"))
+        for i in range(0, 10):
+            instruction_writer.goto(0, 30)
+            instruction_writer.write("Player1 (Right paddle): Use Up and Down arrows to move the paddle", align=self.INSTRUCTION_ALIGNMENT , font=self.INSTRUCTION_FONT)
+            instruction_writer.goto(0, 0)
+            instruction_writer.write("Player2 (Left paddle): Use W and S keys to move the paddle", align=self.INSTRUCTION_ALIGNMENT , font=self.INSTRUCTION_FONT)
+            instruction_writer.goto(0, -30)
+            instruction_writer.write("The first one to reach 5 points wins", align=self.INSTRUCTION_ALIGNMENT , font=self.INSTRUCTION_FONT)
+            instruction_writer.goto(0, -60)
+            instruction_writer.write(f"Game will start in {10-i} seconds", align=self.INSTRUCTION_ALIGNMENT , font=self.INSTRUCTION_FONT)
+            instruction_writer.clear()
+            sleep(1)
 
-        sleep(5)
-
+    
         instruction_writer.clear()
         instruction_writer.reset()
 
@@ -67,6 +74,11 @@ class PongGame():
                     self.scoreboard.left_point()
                 elif self.ball.xcor() < -360:
                     self.scoreboard.right_point()
+
+                if self.scoreboard.left_score == 5 or self.scoreboard.right_score == 5:
+                    self.scoreboard.game_over()
+                    break
+
                 self.ball.reset()
 
 
