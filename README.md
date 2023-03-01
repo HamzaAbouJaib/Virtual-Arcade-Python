@@ -16,4 +16,4 @@ This will launch the application and bring up the game selection screen, where y
 ### Snake
 To play Snake, use the w, a, s, d keys to move the snake around the screen, eating the apples that appear to grow longer. If the snake runs into the wall or its own body, the game is over.
 ### Pong
-To play Pong, a two-player game, player 1 uses the up and down arrow keys to move their paddle, while player 2 uses the w and s keys to move their paddle. The goal is to hit the ball back and forth and score points by getting the ball past the opponent's paddle. The first player to score 5 points wins the game.
+To play Pong, a two-player game, player 1 (Right paddle) uses the up and down arrow keys to move their paddle, while player 2 (Left Paddle) uses the w and s keys to move their paddle. The goal is to hit the ball back and forth and score points by getting the ball past the opponent's paddle. The first player to score 5 points wins the game.
